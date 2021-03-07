@@ -1,0 +1,17 @@
+<ul>
+  <% session[:list][@contact_person].each do |key, val| %>
+    <li><%= key %> : <%= val%></li>
+  <% end%>
+</ul>
+<a href="/contacts/<%= @contact_person %>/edit">Edit</a>
+<br>
+<br>
+
+<form class="delete" action="/delete/<%= @contact_person %>" method="post">
+  <button type="submit" class="delete">Delete Contact</button>
+</form>
+
+
+
+
+

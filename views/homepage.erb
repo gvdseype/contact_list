@@ -1,0 +1,27 @@
+<body>
+  <div>
+    <h3>List of Contacts</h3>
+
+    <ul>
+      <% session[:list].each do |name, details| %>
+        <li><a href="/contacts/<%= name %>"><%= name %></a></li>
+      <% end %>
+    </ul>
+  </div>
+
+  <div>
+    <h3><%= "Find contacts by category"%></h3>
+      
+    <ul>
+      <% session[:categories].each do |category| %>
+        <li><a href="/category_page/<%= category %>"><%= category %></a></li>
+      <% end %>
+    </ul>
+  </div>
+
+  <div>
+    <a href="/new">Add a contact person </a>
+  </div>
+</body>
+
+

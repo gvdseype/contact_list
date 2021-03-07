@@ -1,0 +1,16 @@
+
+<form method="post" action="/edit/<%= @contact_name%>">
+  <label for="new_contact">Modify the contact information</label>
+  <div>
+    <p>Name: </p> <input name="name" id="name" value="<%= @contact_name %>"/>
+    <br>
+    <p>Number: </p> <input name="number" id="number" value="<%= @number_value %>"/>
+    <br>
+    <p>Email: </p> <input name="email" id="email" value="<%= @email_value %>"/>
+    <br>
+    <p>Category: </p> <input name="category" id="category" value="<%= @category_value %>"/>
+    <br>
+    <button type="submit">Save changes</button>
+  </div>
+</form>
+

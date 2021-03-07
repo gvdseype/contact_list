@@ -1,0 +1,9 @@
+<body>
+  <ul>
+    <% users_from_cat(@category_type).each do |contact| %>
+      <li><a href="/contacts/<%= contact %>"><%= contact %></a></li>
+    <% end %>
+    <br>
+  </ul>
+</body>
+
