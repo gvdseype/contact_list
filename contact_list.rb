@@ -103,7 +103,23 @@ post "/edit/:contact_person" do
   @contact_hash[:number] = person_number_value
   @contact_hash[:category] = person_category_value
 
-  session[:list][params[:name]] = session[:list].delete(person)
+  puts @contact_hash
+  puts session[:list]
+
+
+  session[:list].delete(person)
+  session[:list][person_name.to_sym] = @contact_hash
+  puts session[:list]
   session[:categories][session[:categories].index(former_category)] = person_category_value
   redirect "/"
 end
+
+=begin
+name = params[:name].to_sym
+number_value = params[:number]
+email_value = params[:email]
+category_value = params[:category]
+
+session[:list][name] = {number: number_value, email: email_value, category: category_value }
+session[:categories] << category_value if !session[:categories].include?(category_value)
+=end
